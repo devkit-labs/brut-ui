@@ -145,7 +145,7 @@ export function BrutalistLanding() {
 
           <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
             <Link className="brut-quiet px-3 py-2 text-sm" href="/components">Components</Link>
-            <a className="brut-quiet px-3 py-2 text-sm" href="#blocks">Blocks</a>
+            <Link className="brut-quiet px-3 py-2 text-sm" href="/blocks">Blocks</Link>
           </nav>
 
           <a
@@ -485,12 +485,17 @@ export function BrutalistLanding() {
         <section id="blocks" className="border-t-[var(--brut-border)] border-border bg-foreground text-background">
           <div className="mx-auto flex max-w-[1480px] flex-col justify-between gap-8 px-4 py-16 sm:px-6 md:flex-row md:items-end lg:px-8">
             <div>
-              <Badge className="bg-primary text-primary-foreground">Coming next</Badge>
+              <Badge className="bg-primary text-primary-foreground">5 live compositions</Badge>
               <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] uppercase sm:text-6xl">Blocks, without the beige.</h2>
             </div>
-            <p className="max-w-lg text-lg font-semibold text-background/75">
-              The primitives come first. Once the language is locked, blocks will inherit the same tokens and behavior.
-            </p>
+            <div className="max-w-lg">
+              <p className="mb-6 text-lg font-semibold text-background/75">
+                See complete interfaces assembled from the same components, tokens, and interaction language.
+              </p>
+              <Button nativeButton={false} render={<Link href="/blocks" />}>
+                Explore blocks <ArrowRight data-icon="inline-end" />
+              </Button>
+            </div>
           </div>
         </section>
       </main>

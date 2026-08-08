@@ -95,9 +95,9 @@ import { Item, ItemActions, ItemContent, ItemDescription, ItemMedia, ItemTitle }
 import { Kbd, KbdGroup } from "@/registry/brutalist/ui/kbd"
 import { Label } from "@/registry/brutalist/ui/label"
 import { Marker, MarkerContent, MarkerIcon } from "@/registry/brutalist/ui/marker"
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarTrigger } from "@/registry/brutalist/ui/menubar"
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarShortcut, MenubarTrigger } from "@/registry/brutalist/ui/menubar"
 import { NativeSelect, NativeSelectOption } from "@/registry/brutalist/ui/native-select"
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/registry/brutalist/ui/navigation-menu"
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/registry/brutalist/ui/navigation-menu"
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/registry/brutalist/ui/pagination"
 import { Popover, PopoverContent, PopoverDescription, PopoverHeader, PopoverTitle, PopoverTrigger } from "@/registry/brutalist/ui/popover"
 import { Progress, ProgressLabel, ProgressValue } from "@/registry/brutalist/ui/progress"
@@ -127,6 +127,27 @@ const chartData = [
   { month: "Jul", installs: 176 },
   { month: "Aug", installs: 242 },
 ]
+
+function NavigationPreviewLink({
+  title,
+  description,
+  icon,
+}: {
+  title: string
+  description: string
+  icon?: React.ReactNode
+}) {
+  return (
+    <NavigationMenuLink
+      href="#"
+      onClick={(event) => event.preventDefault()}
+      className="grid min-w-0 gap-1 p-3"
+    >
+      <span className="flex items-center gap-2 font-black">{icon}{title}</span>
+      <span className="text-sm leading-snug font-medium text-muted-foreground">{description}</span>
+    </NavigationMenuLink>
+  )
+}
 
 function FoundationPreview({ slug }: { slug: ComponentSlug }) {
   return (
@@ -365,13 +386,102 @@ export function ComponentPreview({ slug }: { slug: ComponentSlug }) {
       )
 
     case "menubar":
-      return <Menubar><MenubarMenu><MenubarTrigger>File</MenubarTrigger><MenubarContent><MenubarItem>New tab</MenubarItem><MenubarItem>New window</MenubarItem><MenubarSeparator /><MenubarItem>Close</MenubarItem></MenubarContent></MenubarMenu><MenubarMenu><MenubarTrigger>Edit</MenubarTrigger><MenubarContent><MenubarItem>Undo</MenubarItem><MenubarItem>Redo</MenubarItem></MenubarContent></MenubarMenu></Menubar>
+      return (
+        <Menubar>
+          <MenubarMenu>
+            <MenubarTrigger>File</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>New tab <MenubarShortcut>⌘T</MenubarShortcut></MenubarItem>
+              <MenubarItem>New window <MenubarShortcut>⌘N</MenubarShortcut></MenubarItem>
+              <MenubarItem>Open file <MenubarShortcut>⌘O</MenubarShortcut></MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Save <MenubarShortcut>⌘S</MenubarShortcut></MenubarItem>
+              <MenubarItem>Print <MenubarShortcut>⌘P</MenubarShortcut></MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Close window</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>Edit</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>Undo <MenubarShortcut>⌘Z</MenubarShortcut></MenubarItem>
+              <MenubarItem>Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut></MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Cut <MenubarShortcut>⌘X</MenubarShortcut></MenubarItem>
+              <MenubarItem>Copy <MenubarShortcut>⌘C</MenubarShortcut></MenubarItem>
+              <MenubarItem>Paste <MenubarShortcut>⌘V</MenubarShortcut></MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>View</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>Toggle sidebar <MenubarShortcut>⌘B</MenubarShortcut></MenubarItem>
+              <MenubarItem>Zoom in <MenubarShortcut>⌘+</MenubarShortcut></MenubarItem>
+              <MenubarItem>Zoom out <MenubarShortcut>⌘−</MenubarShortcut></MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Enter fullscreen</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>Help</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>Documentation</MenubarItem>
+              <MenubarItem>Keyboard shortcuts</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Report an issue</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+        </Menubar>
+      )
 
     case "native-select":
       return <NativeSelect defaultValue="solid" className="max-w-xs"><NativeSelectOption value="soft">Soft</NativeSelectOption><NativeSelectOption value="solid">Solid</NativeSelectOption><NativeSelectOption value="loud">Loud</NativeSelectOption></NativeSelect>
 
     case "navigation-menu":
-      return <NavigationMenu><NavigationMenuList><NavigationMenuItem><NavigationMenuLink href="/components">Components</NavigationMenuLink></NavigationMenuItem><NavigationMenuItem><NavigationMenuLink href="/#blocks">Blocks</NavigationMenuLink></NavigationMenuItem></NavigationMenuList></NavigationMenu>
+      return (
+        <NavigationMenu className="max-w-full">
+          <NavigationMenuList className="flex-wrap">
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+              <NavigationMenuContent className="w-[min(31rem,calc(100vw-3rem))] p-2">
+                <div className="grid gap-1">
+                  <NavigationPreviewLink title="Introduction" description="The ideas and tokens behind BRUT/UI." />
+                  <NavigationPreviewLink title="Installation" description="Add the base theme before installing components." />
+                  <NavigationPreviewLink title="Theme tuning" description="Configure palette, strength, and radius project-wide." />
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+              <NavigationMenuContent className="w-[min(42rem,calc(100vw-3rem))] p-2">
+                <div className="grid gap-1 sm:grid-cols-2">
+                  <NavigationPreviewLink title="Alert Dialog" description="Interrupt users with an important decision." />
+                  <NavigationPreviewLink title="Hover Card" description="Preview useful content behind a link." />
+                  <NavigationPreviewLink title="Progress" description="Show completion for a task or process." />
+                  <NavigationPreviewLink title="Scroll Area" description="Contain long content without losing structure." />
+                  <NavigationPreviewLink title="Tabs" description="Switch between related views and panels." />
+                  <NavigationPreviewLink title="Tooltip" description="Add concise context to an interface control." />
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>With icons</NavigationMenuTrigger>
+              <NavigationMenuContent className="w-[min(23rem,calc(100vw-3rem))] p-2">
+                <div className="grid gap-1">
+                  <NavigationPreviewLink icon={<Sparkles />} title="New releases" description="See the latest registry additions." />
+                  <NavigationPreviewLink icon={<Settings />} title="Theme controls" description="Tune the visual system live." />
+                  <NavigationPreviewLink icon={<User />} title="Community" description="Meet teams building louder interfaces." />
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="#" onClick={(event) => event.preventDefault()} className="font-black">
+                Docs
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      )
 
     case "pagination":
       return <Pagination><PaginationContent><PaginationItem><PaginationPrevious href="#" text="Previous" /></PaginationItem><PaginationItem><PaginationLink href="#" isActive>1</PaginationLink></PaginationItem><PaginationItem><PaginationLink href="#">2</PaginationLink></PaginationItem><PaginationItem><PaginationEllipsis /></PaginationItem><PaginationItem><PaginationNext href="#" text="Next" /></PaginationItem></PaginationContent></Pagination>

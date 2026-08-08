@@ -19,7 +19,7 @@ export function DocsHeader() {
           <Link className="brut-quiet px-3 py-2 text-sm" href="/components">
             Components
           </Link>
-          <Link className="brut-quiet px-3 py-2 text-sm" href="/#blocks">
+          <Link className="brut-quiet px-3 py-2 text-sm" href="/blocks">
             Blocks
           </Link>
         </nav>
