@@ -3,6 +3,7 @@
 import { Progress as ProgressPrimitive } from "@base-ui/react/progress"
 
 import { cn } from "@/lib/utils"
+import "../styles/brutalist.css"
 
 function Progress({
   className,
@@ -29,7 +30,7 @@ function ProgressTrack({ className, ...props }: ProgressPrimitive.Track.Props) {
   return (
     <ProgressPrimitive.Track
       className={cn(
-        "relative flex h-1 w-full items-center overflow-x-hidden rounded-full bg-muted",
+        "brut-progress relative flex h-5 w-full items-center overflow-hidden",
         className
       )}
       data-slot="progress-track"

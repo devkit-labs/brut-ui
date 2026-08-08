@@ -1,78 +1,311 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "brut",
+  "homepage": "https://github.com/akhil1o1/brutalism-ui",
   "items": [
     {
-      "name": "hello-world",
-      "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "name": "base",
+      "type": "registry:base",
+      "title": "BRUT/UI Base",
+      "description": "Project-wide neo-brutalist tokens, palettes, strength levels, radii, focus states, and interaction utilities.",
+      "config": {
+        "style": "base-nova",
+        "iconLibrary": "lucide",
+        "rsc": true,
+        "tsx": true,
+        "tailwind": {
+          "baseColor": "neutral"
+        }
+      },
+      "dependencies": ["tw-animate-css"],
       "files": [
         {
-          "path": "registry/new-york/blocks/hello-world/hello-world.tsx",
-          "type": "registry:component"
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ],
+      "docs": "Set data-brut-palette (paper, signal, or sky), data-brut-strength (soft, solid, or loud), and data-brut-radius (sharp, cut, or chunky) on the html element. Components import this project-wide stylesheet automatically."
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A tactile neo-brutalist button with the standard shadcn API.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
         }
       ]
     },
     {
-      "name": "example-form",
-      "type": "registry:component",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A high-contrast input with visible focus and invalid states.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/new-york/blocks/example-form/example-form.tsx",
-          "type": "registry:component"
+          "path": "registry/brutalist/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
         }
       ]
     },
     {
-      "name": "complex-component",
-      "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A grounded neo-brutalist multiline input.",
+      "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/new-york/blocks/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
+          "path": "registry/brutalist/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
         },
         {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/lib/pokemon.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
         }
       ]
     },
     {
-      "name": "example-with-css",
-      "type": "registry:component",
-      "title": "Example with CSS",
-      "description": "A login form with a CSS file.",
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "A bold accessible form label.",
+      "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/new-york/blocks/example-with-css/example-card.tsx",
-          "type": "registry:component"
+          "path": "registry/brutalist/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
         },
         {
-          "path": "registry/new-york/blocks/example-with-css/example-card.css",
-          "type": "registry:component"
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A weighted panel with stronger elevation than controls.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A compact uppercase status marker.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "A structured alert that never relies on color alone.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A structural separator keyed to the active strength level.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "An accessible checkbox with clear checked and disabled states.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A strongly elevated modal that preserves Base UI focus and keyboard behavior.",
+      "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        },
+        {
+          "path": "registry/brutalist/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "A compact, high-contrast progress indicator.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "A chunky binary control with unmistakable state.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "A compact neo-brutalist overlay with Base UI positioning and focus behavior.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "A tactile neo-brutalist select with accessible keyboard navigation.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
         }
       ]
     }

@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "registry:build": "shadcn build"
+    "registry:build": "shadcn build",
+    "registry:validate": "shadcn registry validate"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
