@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+
+import { BrutThemeSession } from "@/components/brut-theme-session";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -39,10 +41,13 @@ export default function RootLayout({
     <html
       lang="en"
       data-brut-palette="paper"
-      data-brut-strength="solid"
-      data-brut-radius="sharp"
+      data-brut-strength="soft"
+      data-brut-radius="cut"
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <BrutThemeSession />
+        {children}
+      </body>
     </html>
   );
 }

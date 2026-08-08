@@ -1,20 +1,27 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import {
   ArrowRight,
-  Boxes,
   Check,
   CircleAlert,
   Copy,
   Github,
   Palette,
-  Search,
   SlidersHorizontal,
   Sparkles,
   Terminal,
 } from "lucide-react"
 
+import {
+  type BrutPalette,
+  type BrutRadius,
+  type BrutStrength,
+  updateBrutTheme,
+  useBrutTheme,
+} from "@/lib/brut-theme"
+import { componentCatalog } from "@/lib/component-catalog"
 import { Alert, AlertDescription, AlertTitle } from "@/registry/brutalist/ui/alert"
 import { Badge } from "@/registry/brutalist/ui/badge"
 import { Button } from "@/registry/brutalist/ui/button"
@@ -65,103 +72,23 @@ import { Separator } from "@/registry/brutalist/ui/separator"
 import { Switch } from "@/registry/brutalist/ui/switch"
 import { Textarea } from "@/registry/brutalist/ui/textarea"
 
-type PaletteName = "paper" | "signal" | "sky"
-type StrengthName = "soft" | "solid" | "loud"
-type RadiusName = "sharp" | "cut" | "chunky"
-
-const palettes: Array<{ value: PaletteName; label: string; swatch: string }> = [
+const palettes: Array<{ value: BrutPalette; label: string; swatch: string }> = [
   { value: "paper", label: "Paper", swatch: "bg-[#fbfaf6]" },
   { value: "signal", label: "Signal", swatch: "bg-[#f4dd3f]" },
   { value: "sky", label: "Sky", swatch: "bg-[#dcefff]" },
 ]
 
-const strengths: Array<{ value: StrengthName; label: string; detail: string }> = [
+const strengths: Array<{ value: BrutStrength; label: string; detail: string }> = [
   { value: "soft", label: "Soft", detail: "1px / 2px" },
   { value: "solid", label: "Solid", detail: "2px / 4px" },
   { value: "loud", label: "Loud", detail: "3px / 7px" },
 ]
 
-const radii: Array<{ value: RadiusName; label: string; detail: string }> = [
+const radii: Array<{ value: BrutRadius; label: string; detail: string }> = [
   { value: "sharp", label: "Sharp", detail: "0" },
   { value: "cut", label: "Cut", detail: "6px" },
   { value: "chunky", label: "Chunky", detail: "14px" },
 ]
-
-const faviconPalettes: Record<
-  PaletteName,
-  { face: string; glyph: string; border: string; shadow: string; theme: string }
-> = {
-  paper: {
-    face: "#efd34b",
-    glyph: "#211d19",
-    border: "#211d19",
-    shadow: "#211d19",
-    theme: "#fbfaf6",
-  },
-  signal: {
-    face: "#17130f",
-    glyph: "#f2dc3e",
-    border: "#17130f",
-    shadow: "#e96850",
-    theme: "#f2dc3e",
-  },
-  sky: {
-    face: "#bfe4ff",
-    glyph: "#15213d",
-    border: "#15213d",
-    shadow: "#ea7259",
-    theme: "#dcefff",
-  },
-}
-
-function updatePaletteFavicon(palette: PaletteName) {
-  const colors = faviconPalettes[palette]
-  const canvas = document.createElement("canvas")
-  const context = canvas.getContext("2d")
-
-  if (!context) return
-
-  canvas.width = 64
-  canvas.height = 64
-
-  context.fillStyle = colors.shadow
-  context.fillRect(13, 11, 44, 44)
-  context.fillStyle = colors.border
-  context.fillRect(5, 3, 46, 46)
-  context.fillStyle = colors.face
-  context.fillRect(8, 6, 40, 40)
-  context.fillStyle = colors.glyph
-  context.font = "900 27px Arial, sans-serif"
-  context.textAlign = "center"
-  context.textBaseline = "middle"
-  context.fillText("B", 28, 27)
-
-  let favicon = document.querySelector<HTMLLinkElement>(
-    "link[data-brut-favicon]"
-  )
-
-  if (!favicon) {
-    favicon = document.createElement("link")
-    favicon.rel = "icon"
-    favicon.type = "image/png"
-    favicon.dataset.brutFavicon = "true"
-    document.head.appendChild(favicon)
-  }
-
-  favicon.href = canvas.toDataURL("image/png")
-
-  let themeColor = document.querySelector<HTMLMetaElement>(
-    'meta[name="theme-color"]'
-  )
-
-  if (!themeColor) {
-    themeColor = document.createElement("meta")
-    themeColor.name = "theme-color"
-    document.head.appendChild(themeColor)
-  }
-
-  themeColor.content = colors.theme
-}
 
 function ShowcaseCard({
   name,
@@ -194,19 +121,8 @@ function ShowcaseCard({
 }
 
 export function BrutalistLanding() {
-  const [palette, setPalette] = React.useState<PaletteName>("paper")
-  const [strength, setStrength] = React.useState<StrengthName>("solid")
-  const [radius, setRadius] = React.useState<RadiusName>("sharp")
-  const [query, setQuery] = React.useState("")
+  const { palette, strength, radius } = useBrutTheme()
   const [copied, setCopied] = React.useState(false)
-
-  React.useEffect(() => {
-    const root = document.documentElement
-    root.dataset.brutPalette = palette
-    root.dataset.brutStrength = strength
-    root.dataset.brutRadius = radius
-    updatePaletteFavicon(palette)
-  }, [palette, radius, strength])
 
   const copyInstall = async () => {
     await navigator.clipboard.writeText("pnpm dlx shadcn@latest add @brut/button")
@@ -214,7 +130,7 @@ export function BrutalistLanding() {
     window.setTimeout(() => setCopied(false), 1600)
   }
 
-  const normalizedQuery = query.trim().toLowerCase()
+  const normalizedQuery = ""
 
   return (
     <div className="min-h-svh">
@@ -228,26 +144,15 @@ export function BrutalistLanding() {
           </a>
 
           <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
-            <a className="brut-quiet px-3 py-2 text-sm" href="#components">Components</a>
+            <Link className="brut-quiet px-3 py-2 text-sm" href="/components">Components</Link>
             <a className="brut-quiet px-3 py-2 text-sm" href="#blocks">Blocks</a>
           </nav>
-
-          <label className="relative ml-auto hidden w-full max-w-sm lg:block">
-            <span className="sr-only">Search components</span>
-            <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2" />
-            <Input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search components..."
-              className="h-9 pl-9"
-            />
-          </label>
 
           <a
             href="https://github.com/akhil1o1/brutalism-ui"
             target="_blank"
             rel="noreferrer"
-            className="brut-control brut-focus ml-auto inline-flex size-9 items-center justify-center bg-card lg:ml-0"
+            className="brut-control brut-focus ml-auto inline-flex size-9 items-center justify-center bg-card"
             aria-label="View registry source on GitHub"
           >
             <Github className="size-4" />
@@ -275,7 +180,7 @@ export function BrutalistLanding() {
               <Button
                 size="lg"
                 nativeButton={false}
-                render={<a href="#components" />}
+                render={<Link href="/components" />}
               >
                 Browse components <ArrowRight data-icon="inline-end" />
               </Button>
@@ -303,7 +208,7 @@ export function BrutalistLanding() {
               {[
                 ["3", "Palettes"],
                 ["3", "Strengths"],
-                ["61", "Primitives"],
+                [String(componentCatalog.length), "Primitives"],
               ].map(([value, label]) => (
                 <div key={label} className="border-2 border-border bg-muted p-3">
                   <div className="text-2xl font-black">{value}</div>
@@ -338,7 +243,7 @@ export function BrutalistLanding() {
                       size="sm"
                       variant={palette === option.value ? "default" : "outline"}
                       aria-pressed={palette === option.value}
-                      onClick={() => setPalette(option.value)}
+                      onClick={() => updateBrutTheme({ palette: option.value })}
                     >
                       <span className={`size-3 border-2 border-current ${option.swatch}`} />
                       {option.label}
@@ -356,7 +261,7 @@ export function BrutalistLanding() {
                       size="sm"
                       variant={strength === option.value ? "default" : "outline"}
                       aria-pressed={strength === option.value}
-                      onClick={() => setStrength(option.value)}
+                      onClick={() => updateBrutTheme({ strength: option.value })}
                       title={`${option.label}: ${option.detail}`}
                     >
                       {option.label}
@@ -374,7 +279,7 @@ export function BrutalistLanding() {
                       size="sm"
                       variant={radius === option.value ? "default" : "outline"}
                       aria-pressed={radius === option.value}
-                      onClick={() => setRadius(option.value)}
+                      onClick={() => updateBrutTheme({ radius: option.value })}
                       title={`${option.label}: ${option.detail}`}
                     >
                       {option.label}
@@ -387,25 +292,6 @@ export function BrutalistLanding() {
         </section>
 
         <section id="components" className="mx-auto max-w-[1480px] px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <Badge variant="outline"><Boxes data-icon="inline-start" /> Component lab</Badge>
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] uppercase sm:text-6xl">
-                Real parts.<br />Live pressure.
-              </h2>
-            </div>
-            <label className="relative block w-full max-w-sm lg:hidden">
-              <span className="sr-only">Filter components</span>
-              <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2" />
-              <Input
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Filter components..."
-                className="pl-9"
-              />
-            </label>
-          </div>
-
           <div className="grid auto-rows-auto gap-6 md:grid-cols-2 xl:grid-cols-4">
             {(!normalizedQuery || "button".includes(normalizedQuery)) && (
               <ShowcaseCard name="Button" description="Six familiar variants with tactile travel." className="md:col-span-2">
@@ -534,7 +420,7 @@ export function BrutalistLanding() {
                   <CardContent>
                     <div className="grid grid-cols-2 gap-3">
                       <div className="border-2 border-border bg-primary p-4 text-primary-foreground">
-                        <div className="text-2xl font-black">61</div><div className="text-xs font-black uppercase">Components</div>
+                        <div className="text-2xl font-black">{componentCatalog.length}</div><div className="text-xs font-black uppercase">Components</div>
                       </div>
                       <div className="border-2 border-border bg-secondary p-4">
                         <div className="text-2xl font-black">A11Y</div><div className="text-xs font-black uppercase">Preserved</div>
@@ -594,16 +480,6 @@ export function BrutalistLanding() {
             )}
           </div>
 
-          {normalizedQuery && ![
-            "button", "badge", "checkbox", "input label", "switch", "select dropdown", "popover", "dialog",
-            "card", "alert", "textarea", "progress", "separator",
-          ].some((name) => name.includes(normalizedQuery)) && (
-            <div className="brut-panel bg-card p-10 text-center">
-              <Search className="mx-auto mb-4 size-8" />
-              <h3 className="text-xl font-black uppercase">No component found</h3>
-              <p className="mt-2 font-medium text-muted-foreground">Try button, input, card, dialog, or alert.</p>
-            </div>
-          )}
         </section>
 
         <section id="blocks" className="border-t-[var(--brut-border)] border-border bg-foreground text-background">

@@ -11,6 +11,7 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "registry:sync": "node scripts/sync-registry-manifest.mjs",
     "registry:build": "shadcn build",
     "registry:validate": "shadcn registry validate"
   },

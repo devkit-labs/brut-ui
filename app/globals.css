@@ -3,6 +3,13 @@
 @import "shadcn/tailwind.css";
 @import "../registry/brutalist/styles/brutalist.css";
 
+@layer base {
+  body {
+    background-attachment: fixed;
+    background-position: 0 0;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

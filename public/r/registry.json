@@ -17,7 +17,9 @@
           "baseColor": "neutral"
         }
       },
-      "dependencies": ["tw-animate-css"],
+      "dependencies": [
+        "tw-animate-css"
+      ],
       "files": [
         {
           "path": "registry/brutalist/styles/brutalist.css",
@@ -28,114 +30,22 @@
       "docs": "Set data-brut-palette (paper, signal, or sky), data-brut-strength (soft, solid, or loud), and data-brut-radius (sharp, cut, or chunky) on the html element. Components import this project-wide stylesheet automatically."
     },
     {
-      "name": "button",
+      "name": "accordion",
       "type": "registry:ui",
-      "title": "Button",
-      "description": "A tactile neo-brutalist button with the standard shadcn API.",
-      "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["utils"],
+      "title": "Accordion",
+      "description": "The BRUT/UI Accordion component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
-          "path": "registry/brutalist/ui/button.tsx",
+          "path": "registry/brutalist/ui/accordion.tsx",
           "type": "registry:ui",
-          "target": "@ui/button.tsx"
-        },
-        {
-          "path": "registry/brutalist/styles/brutalist.css",
-          "type": "registry:file",
-          "target": "@components/styles/brutalist.css"
-        }
-      ]
-    },
-    {
-      "name": "input",
-      "type": "registry:ui",
-      "title": "Input",
-      "description": "A high-contrast input with visible focus and invalid states.",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["utils"],
-      "files": [
-        {
-          "path": "registry/brutalist/ui/input.tsx",
-          "type": "registry:ui",
-          "target": "@ui/input.tsx"
-        },
-        {
-          "path": "registry/brutalist/styles/brutalist.css",
-          "type": "registry:file",
-          "target": "@components/styles/brutalist.css"
-        }
-      ]
-    },
-    {
-      "name": "textarea",
-      "type": "registry:ui",
-      "title": "Textarea",
-      "description": "A grounded neo-brutalist multiline input.",
-      "registryDependencies": ["utils"],
-      "files": [
-        {
-          "path": "registry/brutalist/ui/textarea.tsx",
-          "type": "registry:ui",
-          "target": "@ui/textarea.tsx"
-        },
-        {
-          "path": "registry/brutalist/styles/brutalist.css",
-          "type": "registry:file",
-          "target": "@components/styles/brutalist.css"
-        }
-      ]
-    },
-    {
-      "name": "label",
-      "type": "registry:ui",
-      "title": "Label",
-      "description": "A bold accessible form label.",
-      "registryDependencies": ["utils"],
-      "files": [
-        {
-          "path": "registry/brutalist/ui/label.tsx",
-          "type": "registry:ui",
-          "target": "@ui/label.tsx"
-        },
-        {
-          "path": "registry/brutalist/styles/brutalist.css",
-          "type": "registry:file",
-          "target": "@components/styles/brutalist.css"
-        }
-      ]
-    },
-    {
-      "name": "card",
-      "type": "registry:ui",
-      "title": "Card",
-      "description": "A weighted panel with stronger elevation than controls.",
-      "registryDependencies": ["utils"],
-      "files": [
-        {
-          "path": "registry/brutalist/ui/card.tsx",
-          "type": "registry:ui",
-          "target": "@ui/card.tsx"
-        },
-        {
-          "path": "registry/brutalist/styles/brutalist.css",
-          "type": "registry:file",
-          "target": "@components/styles/brutalist.css"
-        }
-      ]
-    },
-    {
-      "name": "badge",
-      "type": "registry:ui",
-      "title": "Badge",
-      "description": "A compact uppercase status marker.",
-      "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["utils"],
-      "files": [
-        {
-          "path": "registry/brutalist/ui/badge.tsx",
-          "type": "registry:ui",
-          "target": "@ui/badge.tsx"
+          "target": "@ui/accordion.tsx"
         },
         {
           "path": "registry/brutalist/styles/brutalist.css",
@@ -149,8 +59,12 @@
       "type": "registry:ui",
       "title": "Alert",
       "description": "A structured alert that never relies on color alone.",
-      "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["utils"],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
           "path": "registry/brutalist/ui/alert.tsx",
@@ -165,17 +79,315 @@
       ]
     },
     {
-      "name": "separator",
+      "name": "alert-dialog",
       "type": "registry:ui",
-      "title": "Separator",
-      "description": "A structural separator keyed to the active strength level.",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["utils"],
+      "title": "Alert Dialog",
+      "description": "The BRUT/UI Alert Dialog component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
       "files": [
         {
-          "path": "registry/brutalist/ui/separator.tsx",
+          "path": "registry/brutalist/ui/alert-dialog.tsx",
           "type": "registry:ui",
-          "target": "@ui/separator.tsx"
+          "target": "@ui/alert-dialog.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "The BRUT/UI Aspect Ratio component with the current shadcn behavior and API.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "@ui/aspect-ratio.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "The BRUT/UI Attachment component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/attachment.tsx",
+          "type": "registry:ui",
+          "target": "@ui/attachment.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "The BRUT/UI Avatar component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A compact uppercase status marker.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "The BRUT/UI Breadcrumb component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "@ui/breadcrumb.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "The BRUT/UI Bubble component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/bubble.tsx",
+          "type": "registry:ui",
+          "target": "@ui/bubble.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A tactile neo-brutalist button with the standard shadcn API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "The BRUT/UI Button Group component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "separator",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button-group.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "The BRUT/UI Calendar component with the current shadcn behavior and API.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/calendar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A weighted panel with stronger elevation than controls.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "The BRUT/UI Carousel component with the current shadcn behavior and API.",
+      "dependencies": [
+        "embla-carousel-react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "@ui/carousel.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "The BRUT/UI Chart component with the current shadcn behavior and API.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chart.tsx"
         },
         {
           "path": "registry/brutalist/styles/brutalist.css",
@@ -189,8 +401,13 @@
       "type": "registry:ui",
       "title": "Checkbox",
       "description": "An accessible checkbox with clear checked and disabled states.",
-      "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["utils"],
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
           "path": "registry/brutalist/ui/checkbox.tsx",
@@ -205,12 +422,118 @@
       ]
     },
     {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "The BRUT/UI Collapsible component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "The BRUT/UI Combobox component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-group",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "The BRUT/UI Command component with the current shadcn behavior and API.",
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "input-group",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "The BRUT/UI Context Menu component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/context-menu.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
       "description": "A strongly elevated modal that preserves Base UI focus and keyboard behavior.",
-      "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
-      "registryDependencies": ["utils"],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
           "path": "registry/brutalist/ui/dialog.tsx",
@@ -230,17 +553,21 @@
       ]
     },
     {
-      "name": "progress",
+      "name": "drawer",
       "type": "registry:ui",
-      "title": "Progress",
-      "description": "A compact, high-contrast progress indicator.",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["utils"],
+      "title": "Drawer",
+      "description": "The BRUT/UI Drawer component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
-          "path": "registry/brutalist/ui/progress.tsx",
+          "path": "registry/brutalist/ui/drawer.tsx",
           "type": "registry:ui",
-          "target": "@ui/progress.tsx"
+          "target": "@ui/drawer.tsx"
         },
         {
           "path": "registry/brutalist/styles/brutalist.css",
@@ -250,17 +577,366 @@
       ]
     },
     {
-      "name": "switch",
+      "name": "dropdown-menu",
       "type": "registry:ui",
-      "title": "Switch",
-      "description": "A chunky binary control with unmistakable state.",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["utils"],
+      "title": "Dropdown Menu",
+      "description": "The BRUT/UI Dropdown Menu component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
-          "path": "registry/brutalist/ui/switch.tsx",
+          "path": "registry/brutalist/ui/dropdown-menu.tsx",
           "type": "registry:ui",
-          "target": "@ui/switch.tsx"
+          "target": "@ui/dropdown-menu.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "The BRUT/UI Empty component with the current shadcn behavior and API.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/empty.tsx",
+          "type": "registry:ui",
+          "target": "@ui/empty.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "The BRUT/UI Field component with the current shadcn behavior and API.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "label",
+        "separator",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "The BRUT/UI Hover Card component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/hover-card.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A high-contrast input with visible focus and invalid states.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "The BRUT/UI Input Group component with the current shadcn behavior and API.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input Otp",
+      "description": "The BRUT/UI Input Otp component with the current shadcn behavior and API.",
+      "dependencies": [
+        "input-otp",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/input-otp.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-otp.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "The BRUT/UI Item component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "separator",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/item.tsx",
+          "type": "registry:ui",
+          "target": "@ui/item.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "The BRUT/UI Kbd component with the current shadcn behavior and API.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/kbd.tsx",
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "A bold accessible form label.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "The BRUT/UI Marker component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/marker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/marker.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "The BRUT/UI Menubar component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/menubar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menubar.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "The BRUT/UI Native Select component with the current shadcn behavior and API.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/native-select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/native-select.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "The BRUT/UI Navigation Menu component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "The BRUT/UI Pagination component with the current shadcn behavior and API.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
         },
         {
           "path": "registry/brutalist/styles/brutalist.css",
@@ -274,8 +950,12 @@
       "type": "registry:ui",
       "title": "Popover",
       "description": "A compact neo-brutalist overlay with Base UI positioning and focus behavior.",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["utils"],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
           "path": "registry/brutalist/ui/popover.tsx",
@@ -290,17 +970,484 @@
       ]
     },
     {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "A compact, high-contrast progress indicator.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "The BRUT/UI Questionnaire component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@shadcn/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/questionnaire.tsx",
+          "type": "registry:ui",
+          "target": "@ui/questionnaire.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "The BRUT/UI Radio Group component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "The BRUT/UI Resizable component with the current shadcn behavior and API.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/resizable.tsx",
+          "type": "registry:ui",
+          "target": "@ui/resizable.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "The BRUT/UI Scroll Area component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
       "name": "select",
       "type": "registry:ui",
       "title": "Select",
       "description": "A tactile neo-brutalist select with accessible keyboard navigation.",
-      "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["utils"],
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
           "path": "registry/brutalist/ui/select.tsx",
           "type": "registry:ui",
           "target": "@ui/select.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A structural separator keyed to the active strength level.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "The BRUT/UI Sheet component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "The BRUT/UI Sidebar component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "separator",
+        "sheet",
+        "skeleton",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "The BRUT/UI Skeleton component with the current shadcn behavior and API.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "The BRUT/UI Slider component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "The BRUT/UI Spinner component with the current shadcn behavior and API.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "A chunky binary control with unmistakable state.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "The BRUT/UI Table component with the current shadcn behavior and API.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "The BRUT/UI Tabs component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A grounded neo-brutalist multiline input.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "The BRUT/UI Toast component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/toast.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toast.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "The BRUT/UI Toggle component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "The BRUT/UI Toggle Group component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "toggle",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group.tsx"
+        },
+        {
+          "path": "registry/brutalist/styles/brutalist.css",
+          "type": "registry:file",
+          "target": "@components/styles/brutalist.css"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "The BRUT/UI Tooltip component with the current shadcn behavior and API.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/brutalist/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
         },
         {
           "path": "registry/brutalist/styles/brutalist.css",

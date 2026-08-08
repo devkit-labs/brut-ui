@@ -209,7 +209,7 @@
     border: var(--brut-border) solid var(--input);
     border-radius: var(--radius);
     background: var(--card);
-    box-shadow: 3px 3px 0 var(--brut-shadow-color);
+    box-shadow: var(--brut-shadow-x) var(--brut-shadow-y) 0 var(--brut-shadow-color);
     font-weight: 600;
     transition: box-shadow 120ms ease, transform 120ms ease;
   }
@@ -218,7 +218,46 @@
     outline: 3px solid var(--ring);
     outline-offset: 2px;
     transform: translate(-1px, -1px);
-    box-shadow: 5px 5px 0 var(--brut-shadow-color);
+    box-shadow: calc(var(--brut-shadow-x) + 2px) calc(var(--brut-shadow-y) + 2px) 0 var(--brut-shadow-color);
+  }
+
+  .brut-input-group {
+    border: var(--brut-border) solid var(--input);
+    border-radius: var(--radius);
+    background: var(--card);
+    box-shadow: var(--brut-shadow-x) var(--brut-shadow-y) 0 var(--brut-shadow-color);
+    font-weight: 600;
+    transition: box-shadow 120ms ease, transform 120ms ease;
+  }
+
+  .brut-input-group:focus-within {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+    transform: translate(-1px, -1px);
+    box-shadow: calc(var(--brut-shadow-x) + 2px) calc(var(--brut-shadow-y) + 2px) 0 var(--brut-shadow-color);
+  }
+
+  .brut-input-group:has([aria-invalid="true"]) {
+    border-color: var(--destructive);
+  }
+
+  .brut-input-group:has([aria-invalid="true"]):focus-within {
+    outline-color: var(--destructive);
+  }
+
+  .brut-otp-group:has([data-active="true"]) {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+    transform: translate(-1px, -1px);
+    box-shadow: calc(var(--brut-shadow-x) + 2px) calc(var(--brut-shadow-y) + 2px) 0 var(--brut-shadow-color);
+  }
+
+  .brut-otp-group:has([aria-invalid="true"]) {
+    border-color: var(--destructive);
+  }
+
+  .brut-otp-group:has([aria-invalid="true"]):has([data-active="true"]) {
+    outline-color: var(--destructive);
   }
 
   .brut-chip {
@@ -235,6 +274,12 @@
     border-radius: calc(var(--radius) * 0.5);
     background: var(--card);
     box-shadow: 2px 2px 0 var(--brut-shadow-color);
+  }
+
+  .brut-avatar {
+    border: var(--brut-border) solid var(--border);
+    background: var(--card);
+    box-shadow: calc(var(--brut-border) + 1px) calc(var(--brut-border) + 1px) 0 var(--brut-shadow-color);
   }
 
   .brut-separator {
