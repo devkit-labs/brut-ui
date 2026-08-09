@@ -36,7 +36,7 @@ export function BrutThemeControls() {
     <div className="grid gap-6 xl:grid-cols-3">
       <fieldset>
         <legend className="mb-3 flex items-center gap-2 text-xs font-black tracking-widest uppercase">
-          <Palette className="size-4" /> Palette
+          <Palette className="size-4" /> Flavour
         </legend>
         <div className="flex flex-wrap gap-2">
           {palettes.map((option) => (

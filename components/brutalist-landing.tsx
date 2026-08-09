@@ -7,6 +7,8 @@ import {
   Check,
   CircleAlert,
   Copy,
+  Github,
+  Linkedin,
   Palette,
   SlidersHorizontal,
   Sparkles,
@@ -161,7 +163,7 @@ export function BrutalistLanding() {
         <section className="mx-auto grid max-w-[1480px] gap-12 px-4 pt-10 pb-16 sm:px-6 sm:pt-14 sm:pb-24 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:pt-16 lg:pb-28">
           <div>
             <Badge className="mb-6 bg-accent text-accent-foreground">
-              <Sparkles data-icon="inline-start" /> Built on shadcn
+              <Sparkles data-icon="inline-start" /> Three flavours. Built for production.
             </Badge>
             <h1 className="max-w-5xl text-[clamp(4rem,11vw,9.5rem)] leading-[0.78] font-black tracking-[-0.085em] uppercase">
               UI that
@@ -170,8 +172,8 @@ export function BrutalistLanding() {
               </span>
             </h1>
             <p className="mt-10 max-w-2xl text-lg leading-relaxed font-semibold sm:text-xl">
-              Familiar shadcn APIs, rebuilt with harder edges, honest color, and interaction you can feel.
-              Copy the code. Own the system.
+              A production-minded ui component library in three distinct neo-brutalist flavours:
+              Paper, Signal, and Sky. Built on top of Shadcn UI.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button
@@ -203,7 +205,7 @@ export function BrutalistLanding() {
             </div>
             <div className="mt-10 grid grid-cols-3 gap-3 text-center">
               {[
-                ["3", "Palettes"],
+                ["3", "Flavours"],
                 ["3", "Strengths"],
                 [String(componentCatalog.length), "Primitives"],
               ].map(([value, label]) => (
@@ -221,17 +223,14 @@ export function BrutalistLanding() {
             <div>
               <Badge variant="secondary"><SlidersHorizontal data-icon="inline-start" /> Theme tuner</Badge>
               <h2 id="tuner-heading" className="mt-4 text-3xl font-black tracking-tight uppercase sm:text-4xl">
-                Make it yours.
+                Three flavours. Your level of force.
               </h2>
-              <p className="mt-3 max-w-md font-medium text-muted-foreground">
-                Every control changes the real component tokens—not a screenshot or isolated mockup.
-              </p>
             </div>
 
             <div className="grid gap-6 xl:grid-cols-3">
               <fieldset>
                 <legend className="mb-3 flex items-center gap-2 text-xs font-black tracking-widest uppercase">
-                  <Palette className="size-4" /> Palette
+                  <Palette className="size-4" /> Flavour
                 </legend>
                 <div className="flex flex-wrap gap-2">
                   {palettes.map((option) => (
@@ -498,9 +497,54 @@ export function BrutalistLanding() {
       </main>
 
       <footer className="border-t-[var(--brut-border)] border-border bg-background">
-        <div className="mx-auto flex max-w-[1480px] flex-col justify-between gap-3 px-4 py-6 text-sm font-bold sm:flex-row sm:px-6 lg:px-8">
-          <span>BRUT/UI — OWN YOUR INTERFACE.</span>
-          <span>Built on shadcn · Base UI · Tailwind v4</span>
+        <div className="mx-auto grid max-w-[1480px] gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:px-8">
+          <div>
+            <Badge variant="outline">About the maker</Badge>
+            <h2 id="about-heading" className="mt-5 text-4xl font-black tracking-[-0.05em] uppercase sm:text-6xl">
+              Built by Akhil Panwar.
+            </h2>
+          </div>
+          <div className="max-w-2xl">
+            <p className="text-lg leading-relaxed font-semibold text-muted-foreground">
+              BRUT/UI is an open-source design system created to bring expressive
+              neo-brutalist character to real production applications—without giving
+              up the composability, accessibility, or developer experience of shadcn.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Button
+                variant="outline"
+                nativeButton={false}
+                render={
+                  <a
+                    href="https://www.linkedin.com/in/akhil-panwar-/"
+                    target="_blank"
+                    rel="noreferrer"
+                  />
+                }
+              >
+                <Linkedin data-icon="inline-start" /> LinkedIn
+              </Button>
+              <Button
+                variant="outline"
+                nativeButton={false}
+                render={
+                  <a
+                    href="https://github.com/akhil1o1"
+                    target="_blank"
+                    rel="noreferrer"
+                  />
+                }
+              >
+                <Github data-icon="inline-start" /> GitHub
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className="border-t-[var(--brut-border)] border-border">
+          <div className="mx-auto flex max-w-[1480px] flex-col justify-between gap-3 px-4 py-6 text-sm font-bold sm:flex-row sm:px-6 lg:px-8">
+            <span>BRUT/UI — THREE FLAVOURS. ONE SYSTEM.</span>
+            <span>Built on shadcn · Base UI · Tailwind v4</span>
+          </div>
         </div>
       </footer>
     </div>

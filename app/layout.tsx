@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   ),
   title: "BRUT/UI — A Neo-Brutalist shadcn Registry",
   description:
-    "Accessible shadcn components restyled as a configurable neo-brutalist design system.",
+    "Three production-minded neo-brutalist UI flavours built on accessible shadcn components.",
   openGraph: {
-    title: "BRUT/UI — UI That Hits Back",
+    title: "BRUT/UI — Three Flavours of Neo-Brutalist UI",
     description:
-      "A configurable neo-brutalist component registry built on shadcn and Base UI.",
+      "Paper, Signal, and Sky: a configurable neo-brutalist component registry built for production applications.",
     images: [
       {
         url: "/brut-ui-og.png",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BRUT/UI — UI That Hits Back",
+    title: "BRUT/UI — Three Flavours of Neo-Brutalist UI",
     description:
-      "A configurable neo-brutalist component registry built on shadcn and Base UI.",
+      "Paper, Signal, and Sky: a configurable neo-brutalist component registry built for production applications.",
     images: ["/brut-ui-og.png"],
   },
 };

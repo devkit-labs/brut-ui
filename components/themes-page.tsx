@@ -72,7 +72,7 @@ const customTokens = [
   ["--brut-shadow-y", "Control shadow Y offset", "Keep paired with the X offset for hard shadows."],
   ["--brut-panel-shadow-x", "Panel shadow X offset", "Cards, dialogs, and high-level containers."],
   ["--brut-panel-shadow-y", "Panel shadow Y offset", "Use only for visually important surfaces."],
-  ["--brut-shadow-color", "Hard-shadow color", "Usually follows the palette foreground or border color."],
+  ["--brut-shadow-color", "Hard-shadow color", "Usually follows the active flavour's foreground or border color."],
   ["--brut-hover", "Hover translation", "Moves tactile controls up and left."],
   ["--brut-press", "Pressed translation", "Moves controls into their hard shadow."],
   ["--brut-weight", "Interactive font weight", "Scales label weight with brutalism strength."],
@@ -152,7 +152,9 @@ export function ThemesPage() {
                 Themes.
               </h1>
               <p className="mt-5 max-w-3xl text-lg font-semibold text-muted-foreground">
-                BRUT/UI keeps shadcn&apos;s semantic color contract and adds a small set of tokens for borders, hard shadows, motion, type weight, and radius.
+                Choose one of three production-ready visual flavours, then control its
+                force with coordinated strength and radius settings. BRUT/UI preserves
+                shadcn&apos;s semantic colour contract throughout.
               </p>
             </div>
             <p className="border-l-[var(--brut-border)] border-border pl-4 text-sm font-semibold text-muted-foreground">
@@ -168,7 +170,7 @@ export function ThemesPage() {
                 <SlidersHorizontal data-icon="inline-start" /> Live theme
               </Badge>
               <h2 className="mt-3 text-2xl font-black tracking-tight uppercase">
-                Test the token matrix.
+                Tune the whole system live.
               </h2>
               <p className="mt-2 max-w-sm text-sm font-semibold text-muted-foreground">
                 Changes apply across the app until the browser reloads.
@@ -182,7 +184,7 @@ export function ThemesPage() {
           <aside className="hidden lg:block">
             <nav aria-label="Theme documentation" className="sticky top-24 grid gap-1 text-sm font-bold">
               {[
-                ["Palettes", "#palettes"],
+                ["Flavours", "#flavours"],
                 ["Strength", "#strength"],
                 ["Radius", "#radius"],
                 ["Custom tokens", "#custom-tokens"],
@@ -199,11 +201,11 @@ export function ThemesPage() {
           </aside>
 
           <div className="min-w-0 space-y-24">
-            <section id="palettes" className="scroll-mt-24">
+            <section id="flavours" className="scroll-mt-24">
               <SectionHeading
-                eyebrow="01 / Palette"
-                title="Three purposeful canvases."
-                description="Each palette remaps familiar shadcn semantic variables. Components reference roles—not hard-coded colors—so every composition changes as one system."
+                eyebrow="01 / Flavours"
+                title="Three identities. One reliable system."
+                description="Paper, Signal, and Sky each remap the familiar shadcn semantic variables into a coherent production theme. Components reference roles—not hard-coded colours—so an entire application can change flavour without changing its composition."
               />
               <div className="mt-8 grid gap-5 xl:grid-cols-3">
                 {palettes.map((palette) => (
@@ -213,7 +215,7 @@ export function ThemesPage() {
                         <h3 className="text-xl font-black uppercase">{palette.name}</h3>
                         <code className="text-xs font-bold text-muted-foreground">data-brut-palette=&quot;{palette.value}&quot;</code>
                       </div>
-                      <span className="brut-chip bg-muted px-2 py-1 text-xs uppercase">Palette</span>
+                      <span className="brut-chip bg-muted px-2 py-1 text-xs uppercase">Flavour</span>
                     </div>
                     <p className="mt-4 min-h-16 text-sm font-semibold text-muted-foreground">
                       {palette.description}
@@ -238,7 +240,7 @@ export function ThemesPage() {
               <SectionHeading
                 eyebrow="02 / Strength"
                 title="One dial, coordinated force."
-                description="Strength changes border width, slider thickness, both shadow tiers, tactile movement, and interactive type weight together. Do not tune these values independently inside components."
+                description="Soft, Solid, and Loud scale border width, slider thickness, shadow depth, tactile movement, and interactive type weight together. The hierarchy stays intentional at every level."
               />
               <div className="brut-panel mt-8 overflow-x-auto bg-card">
                 <table className="w-full min-w-[840px] table-fixed border-collapse text-sm">
@@ -275,7 +277,7 @@ export function ThemesPage() {
               <SectionHeading
                 eyebrow="03 / Radius"
                 title="Corners stay coordinated."
-                description="Radius affects component shells and their internal parts. Preserve circles for semantic shapes such as radio indicators and avatars."
+                description="Sharp, Cut, and Chunky coordinate component shells with their internal parts. Semantic circles—such as radio indicators and avatars—remain circular."
               />
               <div className="mt-8 grid gap-5 sm:grid-cols-3">
                 {[
@@ -296,7 +298,7 @@ export function ThemesPage() {
               <SectionHeading
                 eyebrow="04 / Custom tokens"
                 title="The brutalist layer."
-                description="These tokens sit on top of shadcn's semantic theme. Components consume them through shared utilities instead of repeating measurements."
+                description="A compact set of project-wide tokens adds brutalist structure without replacing shadcn's theme contract. Shared utilities keep those measurements consistent across components."
               />
               <div className="brut-panel mt-8 overflow-hidden bg-card">
                 {customTokens.map(([token, role, usage], index) => (
@@ -312,8 +314,8 @@ export function ThemesPage() {
             <section id="semantic-colors" className="scroll-mt-24">
               <SectionHeading
                 eyebrow="05 / Semantic colors"
-                title="Keep the shadcn contract."
-                description="Do not replace semantic variables with palette-specific color names. That keeps copied shadcn compositions compatible with all three BRUT/UI palettes."
+                title="The shadcn contract, preserved."
+                description="BRUT/UI keeps shadcn's semantic variables as its foundation and maps every flavour onto those established roles. Familiar shadcn compositions therefore remain compatible while Paper, Signal, and Sky can restyle the complete interface consistently."
               />
               <div className="mt-8 grid gap-3 md:grid-cols-2">
                 {semanticTokens.map(([token, usage]) => (
@@ -329,7 +331,7 @@ export function ThemesPage() {
               <SectionHeading
                 eyebrow="06 / Utilities"
                 title="Build hierarchy, not repetition."
-                description="The utilities intentionally use different border and shadow treatments. Choose the role that matches the component instead of putting a large hard shadow everywhere."
+                description="Controls, surfaces, panels, and overlays deliberately carry different visual weight. Choose the utility that matches the component's role instead of applying the same hard shadow everywhere."
               />
               <div className="brut-panel mt-8 overflow-hidden bg-card">
                 {utilities.map(([name, role, usage], index) => (
@@ -353,7 +355,7 @@ export function ThemesPage() {
                   [Layers3, "Separate hierarchy", "Use panel shadows for overlays and major containers, normal shadows for controls, and border-only styling for compact items."],
                   [MousePointerClick, "Preserve tactile motion", "Interactive controls move up on hover and collapse into their shadow when pressed. Static surfaces should not move."],
                   [Focus, "Never hide focus", "Use --ring and .brut-focus for a visible outline. A hard shadow is not a replacement for keyboard focus."],
-                  [Box, "Compose with semantic roles", "Use bg-card, bg-popover, border-border, and text-muted-foreground so palettes remain interchangeable."],
+                  [Box, "Compose with semantic roles", "Use bg-card, bg-popover, border-border, and text-muted-foreground so flavours remain interchangeable."],
                 ].map(([Icon, title, copy]) => (
                   <article key={title as string} className="brut-surface bg-card p-5">
                     <Icon className="size-6" />

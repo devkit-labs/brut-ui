@@ -74,14 +74,16 @@ export async function BlocksGalleryPage() {
 
       <main>
         <section className="mx-auto max-w-[1480px] px-4 pt-12 pb-10 sm:px-6 lg:px-8">
-          <Badge variant="secondary"><Blocks data-icon="inline-start" /> Component compositions</Badge>
+          <Badge variant="secondary"><Blocks data-icon="inline-start" /> Production compositions</Badge>
           <div className="mt-5 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
               <h1 className="text-5xl leading-[0.88] font-black tracking-[-0.065em] uppercase sm:text-7xl">
                 Blocks.
               </h1>
               <p className="mt-5 max-w-2xl text-lg font-semibold text-muted-foreground">
-                Full interface ideas assembled from BRUT/UI primitives. Preview the composition, then inspect or copy the code.
+                See how BRUT/UI components work together in complete application
+                patterns. Switch flavours, test the hierarchy, then inspect or copy
+                the composition JSX.
               </p>
             </div>
             <Badge variant="outline" className="w-fit text-sm">{blocks.length} showcases</Badge>
@@ -91,10 +93,10 @@ export async function BlocksGalleryPage() {
         <section className="border-y-[var(--brut-border)] border-border bg-card">
           <div className="mx-auto grid max-w-[1480px] gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[0.55fr_1.45fr] lg:px-8">
             <div>
-              <Badge variant="outline"><SlidersHorizontal data-icon="inline-start" /> Live theme</Badge>
-              <h2 className="mt-3 text-2xl font-black tracking-tight uppercase">Tune every block.</h2>
+              <Badge variant="outline"><SlidersHorizontal data-icon="inline-start" /> Live system</Badge>
+              <h2 className="mt-3 text-2xl font-black tracking-tight uppercase">One composition. Three flavours.</h2>
               <p className="mt-2 max-w-sm text-sm font-semibold text-muted-foreground">
-                Palette, border strength, shadow depth, and radius update every composition together.
+                Flavour, brutalism strength, and radius update every composition as one coordinated system.
               </p>
             </div>
             <BrutThemeControls />

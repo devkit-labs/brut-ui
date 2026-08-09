@@ -1,8 +1,9 @@
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, ExternalLink, PackagePlus } from "lucide-react"
+import { ArrowLeft, ArrowRight, Code2, ExternalLink, Eye, PackagePlus } from "lucide-react"
 
 import { ComponentDocsSidebar } from "@/components/component-docs-sidebar"
 import { ComponentPreview } from "@/components/component-preview"
+import { CopyBlockCode } from "@/components/copy-block-code"
 import { CopyInstallCommand } from "@/components/copy-install-command"
 import { DocsHeader } from "@/components/docs-header"
 import {
@@ -11,8 +12,20 @@ import {
 } from "@/lib/component-catalog"
 import { Badge } from "@/registry/brutalist/ui/badge"
 import { Separator } from "@/registry/brutalist/ui/separator"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/registry/brutalist/ui/tabs"
 
-export function ComponentDetailPage({ item }: { item: ComponentCatalogItem }) {
+export function ComponentDetailPage({
+  item,
+  previewCode,
+}: {
+  item: ComponentCatalogItem
+  previewCode: string
+}) {
   const index = componentCatalog.findIndex((component) => component.slug === item.slug)
   const previous = index > 0 ? componentCatalog[index - 1] : undefined
   const next = index < componentCatalog.length - 1 ? componentCatalog[index + 1] : undefined
@@ -50,12 +63,39 @@ export function ComponentDetailPage({ item }: { item: ComponentCatalogItem }) {
 
           <section aria-labelledby="preview-heading" className="mt-12">
             <div className="mb-4 flex items-center justify-between">
-              <h2 id="preview-heading" className="text-xl font-black uppercase">Preview</h2>
+              <h2 id="preview-heading" className="text-xl font-black uppercase">Example</h2>
               <Badge variant="outline">Live</Badge>
             </div>
-            <div className="brut-panel grid min-h-[28rem] place-items-center overflow-hidden bg-card p-6 sm:p-10">
-              <ComponentPreview slug={item.slug} />
-            </div>
+            <Tabs defaultValue="preview">
+              <TabsList>
+                <TabsTrigger value="preview">
+                  <Eye /> Preview
+                </TabsTrigger>
+                <TabsTrigger value="code">
+                  <Code2 /> Code
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="preview" className="mt-4">
+                <div className="brut-panel grid min-h-[28rem] place-items-center overflow-hidden bg-card p-6 sm:p-10">
+                  <ComponentPreview slug={item.slug} />
+                </div>
+              </TabsContent>
+
+              <TabsContent value="code" className="mt-4">
+                <div className="brut-panel overflow-hidden bg-foreground text-background">
+                  <div className="flex items-center justify-between gap-4 border-b-[var(--brut-border)] border-background/35 px-4 py-3">
+                    <span className="font-mono text-xs font-black tracking-wider uppercase">
+                      {item.slug}-preview.tsx
+                    </span>
+                    <CopyBlockCode code={previewCode} />
+                  </div>
+                  <pre className="max-h-[38rem] overflow-auto p-5 text-xs leading-6 sm:p-7 sm:text-sm">
+                    <code>{previewCode}</code>
+                  </pre>
+                </div>
+              </TabsContent>
+            </Tabs>
           </section>
 
           <section aria-labelledby="installation-heading" className="mt-14 max-w-4xl">
@@ -64,7 +104,9 @@ export function ComponentDetailPage({ item }: { item: ComponentCatalogItem }) {
               Add to your project.
             </h2>
             <p className="mt-4 font-medium text-muted-foreground">
-              BRUT/UI uses the same installation process as shadcn. Configure the BRUT/UI registry, then add the component with the shadcn CLI.
+              Install BRUT/UI through the same workflow as shadcn. Once the registry is
+              configured, the CLI adds this component and its required project-wide
+              theme dependency to your application.
             </p>
             <div className="brut-surface mt-6 flex items-center gap-4 bg-foreground p-3 pl-5 text-background">
               <code className="min-w-0 flex-1 overflow-x-auto font-mono text-sm font-bold whitespace-nowrap">

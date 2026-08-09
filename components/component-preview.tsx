@@ -389,7 +389,7 @@ export function ComponentPreview({ slug }: { slug: ComponentSlug }) {
                <AccordionItem value="item-2">
                   <AccordionTrigger>Can I tune the theme?</AccordionTrigger>
                   <AccordionContent>
-                     Use the palette, strength, and radius controls globally.
+                     Use the flavour, strength, and radius controls globally.
                   </AccordionContent>
                </AccordionItem>
             </Accordion>
@@ -498,7 +498,7 @@ export function ComponentPreview({ slug }: { slug: ComponentSlug }) {
                </Bubble>
                <Bubble align="end">
                   <BubbleContent>
-                     Yes — palette, strength, and radius are global.
+                     Yes — flavour, strength, and radius are global.
                   </BubbleContent>
                   <BubbleReactions>⚡ 4</BubbleReactions>
                </Bubble>
@@ -674,9 +674,9 @@ export function ComponentPreview({ slug }: { slug: ComponentSlug }) {
       case "combobox":
          return (
             <Combobox items={["Paper", "Signal", "Sky"]} defaultValue="Sky">
-               <ComboboxInput className="w-64" placeholder="Choose a palette" />
+               <ComboboxInput className="w-64" placeholder="Choose a flavour" />
                <ComboboxContent>
-                  <ComboboxEmpty>No palette found.</ComboboxEmpty>
+                  <ComboboxEmpty>No flavour found.</ComboboxEmpty>
                   <ComboboxList>
                      {(item: string) => (
                         <ComboboxItem key={item} value={item}>
@@ -1044,7 +1044,7 @@ export function ComponentPreview({ slug }: { slug: ComponentSlug }) {
                            />
                            <NavigationPreviewLink
                               title="Theme tuning"
-                              description="Configure palette, strength, and radius project-wide."
+                              description="Configure flavour, strength, and radius project-wide."
                            />
                         </div>
                      </NavigationMenuContent>

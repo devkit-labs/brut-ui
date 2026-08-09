@@ -145,7 +145,7 @@ export const componentCatalog: ComponentCatalogItem[] = componentSlugs.map(
       slug,
       title,
       category: categoryBySlug[slug] ?? "Component",
-      description: `${title} with shadcn-compatible behavior and the BRUT/UI visual system.`,
+      description: `${title} with familiar shadcn behaviour, accessible interactions, and the complete BRUT/UI visual system.`,
       shadcnUrl: `https://ui.shadcn.com/docs/components/${slug}`,
     }
   }

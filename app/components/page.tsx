@@ -5,7 +5,7 @@ import { ComponentsCatalogPage } from "@/components/components-catalog-page"
 
 export const metadata: Metadata = {
   title: "Components — BRUT/UI",
-  description: "Browse every component in the BRUT/UI neo-brutalist registry.",
+  description: "Browse production-minded shadcn components across all three BRUT/UI flavours.",
 }
 
 export default function ComponentsPage() {

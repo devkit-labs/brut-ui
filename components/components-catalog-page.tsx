@@ -77,7 +77,7 @@ export function ComponentsCatalogPage() {
       <main>
         <section className="mx-auto max-w-[1480px] px-4 pt-12 pb-10 sm:px-6 lg:px-8">
           <Badge variant="secondary">
-            <Boxes data-icon="inline-start" /> Component registry
+            <Boxes data-icon="inline-start" /> Production-ready primitives
           </Badge>
           <div className="mt-5 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
@@ -85,7 +85,9 @@ export function ComponentsCatalogPage() {
                 Components.
               </h1>
               <p className="mt-5 max-w-2xl text-lg font-semibold text-muted-foreground">
-                Every installed primitive in one place. Pick a component to see its live preview and installation command.
+                Browse shadcn-compatible components restyled for all three BRUT/UI
+                flavours. Preview the real component, inspect its JSX, and install it
+                with the familiar shadcn workflow.
               </p>
             </div>
             <Badge variant="outline" className="w-fit text-sm">
@@ -98,10 +100,10 @@ export function ComponentsCatalogPage() {
           <div className="mx-auto grid max-w-[1480px] gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[0.55fr_1.45fr] lg:px-8">
             <div>
               <Badge variant="outline">
-                <SlidersHorizontal data-icon="inline-start" /> Live theme
+                <SlidersHorizontal data-icon="inline-start" /> Live system
               </Badge>
               <h2 className="mt-3 text-2xl font-black tracking-tight uppercase">
-                Tune every preview.
+                Test every flavour in context.
               </h2>
             </div>
             <BrutThemeControls />

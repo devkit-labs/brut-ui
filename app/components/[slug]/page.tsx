@@ -6,6 +6,7 @@ import {
   componentSlugs,
   getComponent,
 } from "@/lib/component-catalog"
+import { getComponentPreviewSource } from "@/lib/component-preview-source"
 
 type ComponentPageProps = {
   params: Promise<{ slug: string }>
@@ -37,7 +38,9 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
     notFound()
   }
 
-  return <ComponentDetailPage item={item} />
+  const previewCode = await getComponentPreviewSource(item.slug)
+
+  return <ComponentDetailPage item={item} previewCode={previewCode} />
 }
 
 export const dynamicParams = false
