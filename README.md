@@ -2,18 +2,37 @@
 
 A configurable neo-brutalist component registry built on shadcn, Base UI, React, Next.js, TypeScript, and Tailwind CSS v4.
 
-[Website](https://github.com/devkit-labs/brutalist-ui) · [Repository](https://github.com/devkit-labs/brutalist-ui) · [Issues](https://github.com/devkit-labs/brutalist-ui/issues)
+[Website](https://www.brut-ui.site/) · [Repository](https://github.com/devkit-labs/brut-ui) · [Issues](https://github.com/devkit-labs/brut-ui/issues)
 
 ## What it includes
 
 - Installable shadcn-compatible UI components
-- Paper, Signal, and Sky palettes
+- Paper, Signal, and Sky flavours
 - Soft, Solid, and Loud brutalism strengths
 - Sharp, Cut, and Chunky radius modes
 - Accessible Base UI behavior and component APIs
 - Component previews, theme documentation, and composed block showcases
 
 The registry source of truth lives in `registry/brutalist/`. Generated registry items are written to `public/r/`.
+
+## Installation
+
+Add the BRUT/UI namespace to your project's `components.json`:
+
+```json
+{
+  "registries": {
+    "@brut-ui": "https://www.brut-ui.site/r/{name}.json"
+  }
+}
+```
+
+Then install the base theme and any components you need:
+
+```bash
+pnpm dlx shadcn@latest add @brut-ui/base
+pnpm dlx shadcn@latest add @brut-ui/button @brut-ui/input
+```
 
 ## Development
 
@@ -50,4 +69,4 @@ See the `/themes` page for the complete installed-token reference and usage guid
 
 ## Repository
 
-BRUT/UI is maintained by [DevKit Labs](https://github.com/devkit-labs) at [devkit-labs/brutalist-ui](https://github.com/devkit-labs/brutalist-ui).
+BRUT/UI is maintained by [DevKit Labs](https://github.com/devkit-labs) at [devkit-labs/brut-ui](https://github.com/devkit-labs/brut-ui).

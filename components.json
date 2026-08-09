@@ -17,5 +17,8 @@
     "lib": "@/lib",
     "hooks": "@/registry/brutalist/hooks"
   },
-  "iconLibrary": "lucide"
+  "iconLibrary": "lucide",
+  "registries": {
+    "@brut-ui": "https://www.brut-ui.site/r/{name}.json"
+  }
 }

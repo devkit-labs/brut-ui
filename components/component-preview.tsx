@@ -841,7 +841,7 @@ export function ComponentPreview({ slug }: { slug: ComponentSlug }) {
          return (
             <HoverCard>
                <HoverCardTrigger render={<Button variant="link" />}>
-                  @brut/ui
+                  @brut-ui
                </HoverCardTrigger>
                <HoverCardContent>
                   <div className="font-black uppercase">BRUT/UI</div>

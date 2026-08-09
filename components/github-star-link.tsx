@@ -16,7 +16,7 @@ export function GithubStarLink() {
         <TooltipTrigger
           render={
             <a
-              href="https://github.com/devkit-labs/brutalist-ui"
+              href="https://github.com/devkit-labs/brut-ui"
               target="_blank"
               rel="noreferrer"
               className="brut-control brut-focus inline-flex size-9 items-center justify-center bg-card"

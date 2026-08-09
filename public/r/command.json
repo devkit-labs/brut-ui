@@ -8,8 +8,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "dialog",
-    "input-group",
+    "@brut-ui/dialog",
+    "@brut-ui/input-group",
     "utils"
   ],
   "files": [

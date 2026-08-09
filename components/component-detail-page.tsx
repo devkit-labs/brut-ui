@@ -29,7 +29,7 @@ export function ComponentDetailPage({
   const index = componentCatalog.findIndex((component) => component.slug === item.slug)
   const previous = index > 0 ? componentCatalog[index - 1] : undefined
   const next = index < componentCatalog.length - 1 ? componentCatalog[index + 1] : undefined
-  const command = `pnpm dlx shadcn@latest add @brut/${item.slug}`
+  const command = `pnpm dlx shadcn@latest add @brut-ui/${item.slug}`
 
   return (
     <div className="min-h-svh">

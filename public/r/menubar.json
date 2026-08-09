@@ -8,7 +8,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "dropdown-menu",
+    "@brut-ui/dropdown-menu",
     "utils"
   ],
   "files": [

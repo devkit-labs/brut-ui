@@ -7,7 +7,7 @@
     "@base-ui/react"
   ],
   "registryDependencies": [
-    "button",
+    "@brut-ui/button",
     "utils"
   ],
   "files": [

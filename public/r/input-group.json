@@ -7,9 +7,9 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "button",
-    "input",
-    "textarea",
+    "@brut-ui/button",
+    "@brut-ui/input",
+    "@brut-ui/textarea",
     "utils"
   ],
   "files": [

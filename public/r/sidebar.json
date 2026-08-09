@@ -9,12 +9,12 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "button",
-    "input",
-    "separator",
-    "sheet",
-    "skeleton",
-    "tooltip",
+    "@brut-ui/button",
+    "@brut-ui/input",
+    "@brut-ui/separator",
+    "@brut-ui/sheet",
+    "@brut-ui/skeleton",
+    "@brut-ui/tooltip",
     "utils"
   ],
   "files": [

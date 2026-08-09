@@ -128,7 +128,7 @@ export function BrutalistLanding() {
   const [copied, setCopied] = React.useState(false)
 
   const copyInstall = async () => {
-    await navigator.clipboard.writeText("pnpm dlx shadcn@latest add @brut/button")
+    await navigator.clipboard.writeText("pnpm dlx shadcn@latest add @brut-ui/button")
     setCopied(true)
     window.setTimeout(() => setCopied(false), 1600)
   }
@@ -197,7 +197,7 @@ export function BrutalistLanding() {
             <Terminal className="mb-8 size-12" strokeWidth={2.5} />
             <div className="font-mono text-sm font-bold sm:text-base">
               <p><span className="text-destructive">$</span> pnpm dlx shadcn@latest</p>
-              <p className="mt-2">add @brut/button</p>
+              <p className="mt-2">add @brut-ui/button</p>
               <Separator className="my-6" />
               <p className="text-muted-foreground">✓ base theme merged</p>
               <p className="text-muted-foreground">✓ dependencies installed</p>

@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "base",
   "title": "BRUT/UI Base",
-  "description": "Project-wide neo-brutalist tokens, palettes, strength levels, radii, focus states, and interaction utilities.",
+  "description": "Project-wide neo-brutalist tokens, flavours, strength levels, radii, focus states, and interaction utilities.",
   "dependencies": [
     "tw-animate-css"
   ],
@@ -14,7 +14,7 @@
       "target": "@components/styles/brutalist.css"
     }
   ],
-  "docs": "Set data-brut-palette (paper, signal, or sky), data-brut-strength (soft, solid, or loud), and data-brut-radius (sharp, cut, or chunky) on the html element. Components import this project-wide stylesheet automatically.",
+  "docs": "Choose the Paper, Signal, or Sky flavour with data-brut-palette; set data-brut-strength to soft, solid, or loud; and set data-brut-radius to sharp, cut, or chunky on the html element. Components import this project-wide stylesheet automatically.",
   "type": "registry:base",
   "config": {
     "style": "base-nova",

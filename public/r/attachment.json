@@ -8,7 +8,7 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "button",
+    "@brut-ui/button",
     "utils"
   ],
   "files": [

@@ -8,7 +8,7 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "separator",
+    "@brut-ui/separator",
     "utils"
   ],
   "files": [

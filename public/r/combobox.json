@@ -8,8 +8,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "button",
-    "input-group",
+    "@brut-ui/button",
+    "@brut-ui/input-group",
     "utils"
   ],
   "files": [
