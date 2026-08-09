@@ -1,23 +1,53 @@
-# registry-template
+# BRUT/UI
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+A configurable neo-brutalist component registry built on shadcn, Base UI, React, Next.js, TypeScript, and Tailwind CSS v4.
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template-v3](https://github.com/shadcn-ui/registry-template-v3).
+[Website](https://github.com/devkit-labs/brutalist-ui) · [Repository](https://github.com/devkit-labs/brutalist-ui) · [Issues](https://github.com/devkit-labs/brutalist-ui/issues)
 
-## Getting Started
+## What it includes
 
-This is a template for creating a custom registry using Next.js.
+- Installable shadcn-compatible UI components
+- Paper, Signal, and Sky palettes
+- Soft, Solid, and Loud brutalism strengths
+- Sharp, Cut, and Chunky radius modes
+- Accessible Base UI behavior and component APIs
+- Component previews, theme documentation, and composed block showcases
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+The registry source of truth lives in `registry/brutalist/`. Generated registry items are written to `public/r/`.
 
-## Documentation
+## Development
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to browse the site. Local registry items are available at URLs such as `http://localhost:3000/r/button.json`.
+
+## Validation
+
+```bash
+pnpm typecheck
+pnpm lint
+pnpm registry:build
+pnpm registry:validate
+pnpm build
+```
+
+## Theme configuration
+
+BRUT/UI keeps shadcn's semantic color variables and adds project-wide brutalist tokens. Configure the theme on the document root:
+
+```html
+<html
+  data-brut-palette="paper"
+  data-brut-strength="soft"
+  data-brut-radius="cut"
+>
+```
+
+See the `/themes` page for the complete installed-token reference and usage guidelines.
+
+## Repository
+
+BRUT/UI is maintained by [DevKit Labs](https://github.com/devkit-labs) at [devkit-labs/brutalist-ui](https://github.com/devkit-labs/brutalist-ui).

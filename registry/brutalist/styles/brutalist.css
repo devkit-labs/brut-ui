@@ -19,7 +19,6 @@
   --input: oklch(0.15 0.01 65);
   --ring: oklch(0.56 0.23 264);
   --brut-shadow-color: oklch(0.15 0.01 65);
-  --brut-grid-color: oklch(0.15 0.01 65 / 9%);
 }
 
 :root {
@@ -58,7 +57,6 @@
   --input: oklch(0.13 0.01 70);
   --ring: oklch(0.55 0.24 28);
   --brut-shadow-color: oklch(0.13 0.01 70);
-  --brut-grid-color: oklch(0.13 0.01 70 / 12%);
 }
 
 [data-brut-palette="sky"] {
@@ -81,7 +79,6 @@
   --input: oklch(0.16 0.04 255);
   --ring: oklch(0.67 0.2 28);
   --brut-shadow-color: oklch(0.16 0.04 255);
-  --brut-grid-color: oklch(0.16 0.04 255 / 11%);
 }
 
 :root,
@@ -91,6 +88,7 @@
   --brut-shadow-y: 4px;
   --brut-panel-shadow-x: 7px;
   --brut-panel-shadow-y: 7px;
+  --brut-slider-track: 4px;
   --brut-hover: -1px;
   --brut-press: 2px;
   --brut-weight: 700;
@@ -102,6 +100,7 @@
   --brut-shadow-y: 2px;
   --brut-panel-shadow-x: 4px;
   --brut-panel-shadow-y: 4px;
+  --brut-slider-track: 2px;
   --brut-hover: -1px;
   --brut-press: 1px;
   --brut-weight: 600;
@@ -113,6 +112,7 @@
   --brut-shadow-y: 6px;
   --brut-panel-shadow-x: 9px;
   --brut-panel-shadow-y: 9px;
+  --brut-slider-track: 6px;
   --brut-hover: -2px;
   --brut-press: 3px;
   --brut-weight: 800;
@@ -144,10 +144,6 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    background-image:
-      linear-gradient(var(--brut-grid-color) 1px, transparent 1px),
-      linear-gradient(90deg, var(--brut-grid-color) 1px, transparent 1px);
-    background-size: 28px 28px;
   }
 
   ::selection {
@@ -299,6 +295,18 @@
     border-radius: calc(var(--radius) * 0.5);
     background: var(--card);
     box-shadow: 2px 2px 0 var(--brut-shadow-color);
+  }
+
+  .brut-radio {
+    border: var(--brut-border) solid var(--input);
+  }
+
+  .brut-slider-thumb {
+    border: var(--brut-border) solid var(--ring);
+  }
+
+  .brut-menubar {
+    border: var(--brut-border) solid var(--border);
   }
 
   .brut-avatar {

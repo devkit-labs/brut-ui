@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "brut",
-  "homepage": "https://github.com/akhil1o1/brutalism-ui",
+  "homepage": "https://github.com/devkit-labs/brutalist-ui",
   "items": [
     {
       "name": "base",

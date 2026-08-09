@@ -3,8 +3,25 @@
 @import "shadcn/tailwind.css";
 @import "../registry/brutalist/styles/brutalist.css";
 
+:root,
+[data-brut-palette="paper"] {
+  --site-grid-color: oklch(0.15 0.01 65 / 9%);
+}
+
+[data-brut-palette="signal"] {
+  --site-grid-color: oklch(0.13 0.01 70 / 12%);
+}
+
+[data-brut-palette="sky"] {
+  --site-grid-color: oklch(0.16 0.04 255 / 11%);
+}
+
 @layer base {
   body {
+    background-image:
+      linear-gradient(var(--site-grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--site-grid-color) 1px, transparent 1px);
+    background-size: 28px 28px;
     background-attachment: fixed;
     background-position: 0 0;
   }

@@ -1,8 +1,10 @@
-import { readFile, readdir, writeFile } from "node:fs/promises"
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises"
 import path from "node:path"
 
 const projectRoot = process.cwd()
 const manifestPath = path.join(projectRoot, "registry.json")
+const publicRegistryDirectory = path.join(projectRoot, "public", "r")
+const publicManifestPath = path.join(publicRegistryDirectory, "registry.json")
 const uiDirectory = path.join(projectRoot, "registry", "brutalist", "ui")
 
 const packageName = (specifier) => {
@@ -100,6 +102,12 @@ const componentItems = [...existingItems.values()]
 
 manifest.items = [baseItem, ...componentItems]
 
-await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`)
+const serializedManifest = `${JSON.stringify(manifest, null, 2)}\n`
 
-console.log(`Synced ${componentItems.length} component entries in registry.json.`)
+await mkdir(publicRegistryDirectory, { recursive: true })
+await Promise.all([
+  writeFile(manifestPath, serializedManifest),
+  writeFile(publicManifestPath, serializedManifest),
+])
+
+console.log(`Synced ${componentItems.length} component entries in registry.json and public/r/registry.json.`)

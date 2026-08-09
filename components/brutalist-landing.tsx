@@ -7,13 +7,14 @@ import {
   Check,
   CircleAlert,
   Copy,
-  Github,
   Palette,
   SlidersHorizontal,
   Sparkles,
   Terminal,
 } from "lucide-react"
 
+import { DocsNavLink } from "@/components/docs-nav-link"
+import { GithubStarLink } from "@/components/github-star-link"
 import {
   type BrutPalette,
   type BrutRadius,
@@ -144,19 +145,15 @@ export function BrutalistLanding() {
           </a>
 
           <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
-            <Link className="brut-quiet px-3 py-2 text-sm" href="/components">Components</Link>
-            <Link className="brut-quiet px-3 py-2 text-sm" href="/blocks">Blocks</Link>
+            <DocsNavLink href="/">Home</DocsNavLink>
+            <DocsNavLink href="/components">Components</DocsNavLink>
+            <DocsNavLink href="/blocks">Blocks</DocsNavLink>
+            <DocsNavLink href="/themes">Theme</DocsNavLink>
           </nav>
 
-          <a
-            href="https://github.com/akhil1o1/brutalism-ui"
-            target="_blank"
-            rel="noreferrer"
-            className="brut-control brut-focus ml-auto inline-flex size-9 items-center justify-center bg-card"
-            aria-label="View registry source on GitHub"
-          >
-            <Github className="size-4" />
-          </a>
+          <div className="ml-auto">
+            <GithubStarLink />
+          </div>
         </div>
       </header>
 

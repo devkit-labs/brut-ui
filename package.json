@@ -2,6 +2,14 @@
   "name": "registry",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/devkit-labs/brutalist-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devkit-labs/brutalist-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devkit-labs/brutalist-ui/issues"
+  },
   "engines": {
     "node": ">=20.9.0"
   },
@@ -12,7 +20,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "registry:sync": "node scripts/sync-registry-manifest.mjs",
-    "registry:build": "shadcn build",
+    "registry:build": "node scripts/sync-registry-manifest.mjs && shadcn build",
     "registry:validate": "shadcn registry validate"
   },
   "dependencies": {

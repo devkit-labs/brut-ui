@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { Github } from "lucide-react"
+
+import { DocsNavLink } from "@/components/docs-nav-link"
+import { GithubStarLink } from "@/components/github-star-link"
 
 export function DocsHeader() {
   return (
@@ -16,23 +18,15 @@ export function DocsHeader() {
         </Link>
 
         <nav aria-label="Documentation navigation" className="ml-2 hidden items-center gap-1 sm:flex">
-          <Link className="brut-quiet px-3 py-2 text-sm" href="/components">
-            Components
-          </Link>
-          <Link className="brut-quiet px-3 py-2 text-sm" href="/blocks">
-            Blocks
-          </Link>
+          <DocsNavLink href="/">Home</DocsNavLink>
+          <DocsNavLink href="/components">Components</DocsNavLink>
+          <DocsNavLink href="/blocks">Blocks</DocsNavLink>
+          <DocsNavLink href="/themes">Theme</DocsNavLink>
         </nav>
 
-        <a
-          href="https://github.com/akhil1o1/brutalism-ui"
-          target="_blank"
-          rel="noreferrer"
-          className="brut-control brut-focus ml-auto inline-flex size-9 items-center justify-center bg-card"
-          aria-label="View registry source on GitHub"
-        >
-          <Github className="size-4" />
-        </a>
+        <div className="ml-auto">
+          <GithubStarLink />
+        </div>
       </div>
     </header>
   )

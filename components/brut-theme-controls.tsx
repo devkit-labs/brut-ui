@@ -20,7 +20,7 @@ const palettes: Array<{ value: BrutPalette; label: string; swatch: string }> = [
 const strengths: Array<{ value: BrutStrength; label: string; detail: string }> = [
   { value: "soft", label: "Soft", detail: "1px / 2px" },
   { value: "solid", label: "Solid", detail: "2px / 4px" },
-  { value: "loud", label: "Loud", detail: "3px / 7px" },
+  { value: "loud", label: "Loud", detail: "3px / 6px" },
 ]
 
 const radii: Array<{ value: BrutRadius; label: string; detail: string }> = [
