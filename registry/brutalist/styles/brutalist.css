@@ -399,6 +399,29 @@
     border-radius: var(--radius);
     background: var(--card);
   }
+
+  .brut-resizable-group {
+    overflow: hidden;
+    border: var(--brut-border) solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+  }
+
+  .brut-resizable-handle {
+    width: var(--brut-border);
+    background: var(--border);
+  }
+
+  .brut-resizable-handle[aria-orientation="horizontal"] {
+    width: 100%;
+    height: var(--brut-border);
+  }
+
+  .brut-resizable-grip {
+    border: var(--brut-border) solid var(--border);
+    border-radius: min(var(--radius), 0.375rem);
+    background: var(--card);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

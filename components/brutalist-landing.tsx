@@ -540,7 +540,10 @@ export function BrutalistLanding() {
             </div>
           </div>
         </div>
-        <div className="border-t-[var(--brut-border)] border-border">
+
+        <Separator />
+
+        <div>
           <div className="mx-auto flex max-w-[1480px] flex-col justify-between gap-3 px-4 py-6 text-sm font-bold sm:flex-row sm:px-6 lg:px-8">
             <span>BRUT/UI — THREE FLAVOURS. ONE SYSTEM.</span>
             <span>Built on shadcn · Base UI · Tailwind v4</span>

@@ -1231,7 +1231,7 @@ export function ComponentPreview({ slug }: { slug: ComponentSlug }) {
          return (
             <ResizablePanelGroup
                orientation="horizontal"
-               className="h-44 max-w-xl rounded-[var(--radius)] border-2 border-border"
+               className="h-44 max-w-xl"
             >
                <ResizablePanel defaultSize={50}>
                   <div className="grid h-full place-items-center font-black">
