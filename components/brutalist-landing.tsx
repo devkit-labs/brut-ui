@@ -8,6 +8,7 @@ import {
   CircleAlert,
   Copy,
   Github,
+  Globe2,
   Linkedin,
   Palette,
   SlidersHorizontal,
@@ -497,46 +498,93 @@ export function BrutalistLanding() {
       </main>
 
       <footer className="border-t-[var(--brut-border)] border-border bg-background">
-        <div className="mx-auto grid max-w-[1480px] gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:px-8">
+        <div className="mx-auto grid max-w-[1480px] gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.65fr_1.35fr] lg:items-start lg:px-8">
           <div>
-            <Badge variant="outline">About the maker</Badge>
+            <Badge variant="outline">About the team</Badge>
             <h2 id="about-heading" className="mt-5 text-4xl font-black tracking-[-0.05em] uppercase sm:text-6xl">
-              Built by Akhil Panwar.
+              Built together.
             </h2>
           </div>
-          <div className="max-w-2xl">
+          <div>
             <p className="text-lg leading-relaxed font-semibold text-muted-foreground">
-              BRUT/UI is an open-source design system created to bring expressive
-              neo-brutalist character to real production applications—without giving
-              up the composability, accessibility, or developer experience of shadcn.
+              BRUT/UI brings expressive neo-brutalist character to production
+              applications without giving up the composability, accessibility, or
+              developer experience of shadcn.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button
-                variant="outline"
-                nativeButton={false}
-                render={
-                  <a
-                    href="https://www.linkedin.com/in/akhil-panwar-/"
-                    target="_blank"
-                    rel="noreferrer"
-                  />
-                }
-              >
-                <Linkedin data-icon="inline-start" /> LinkedIn
-              </Button>
-              <Button
-                variant="outline"
-                nativeButton={false}
-                render={
-                  <a
-                    href="https://github.com/akhil1o1"
-                    target="_blank"
-                    rel="noreferrer"
-                  />
-                }
-              >
-                <Github data-icon="inline-start" /> GitHub
-              </Button>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2">
+              <article className="brut-item bg-card p-5">
+                <p className="text-xs font-black tracking-widest text-muted-foreground uppercase">
+                  Creator &amp; developer
+                </p>
+                <h3 className="mt-2 text-2xl font-black uppercase">Akhil Panwar</h3>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    nativeButton={false}
+                    render={
+                      <a
+                        href="https://www.linkedin.com/in/akhil-panwar-/"
+                        target="_blank"
+                        rel="noreferrer"
+                      />
+                    }
+                  >
+                    <Linkedin data-icon="inline-start" /> LinkedIn
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    nativeButton={false}
+                    render={
+                      <a
+                        href="https://github.com/akhil1o1"
+                        target="_blank"
+                        rel="noreferrer"
+                      />
+                    }
+                  >
+                    <Github data-icon="inline-start" /> GitHub
+                  </Button>
+                </div>
+              </article>
+
+              <article className="brut-item bg-card p-5">
+                <p className="text-xs font-black tracking-widest text-muted-foreground uppercase">
+                  Designer
+                </p>
+                <h3 className="mt-2 text-2xl font-black uppercase">Dulba Dorge</h3>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    nativeButton={false}
+                    render={
+                      <a
+                        href="https://dulbadorje.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                      />
+                    }
+                  >
+                    <Globe2 data-icon="inline-start" /> Portfolio
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    nativeButton={false}
+                    render={
+                      <a
+                        href="https://www.linkedin.com/in/dulbha-dorje-b39692245/"
+                        target="_blank"
+                        rel="noreferrer"
+                      />
+                    }
+                  >
+                    <Linkedin data-icon="inline-start" /> LinkedIn
+                  </Button>
+                </div>
+              </article>
             </div>
           </div>
         </div>
