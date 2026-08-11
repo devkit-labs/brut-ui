@@ -2,16 +2,21 @@
 
 import * as React from "react";
 import {
+   BookOpen,
+   Bot,
    Bold,
+   ChevronRight,
    ChevronsUpDown,
    CircleAlert,
    FileText,
+   GalleryVerticalEnd,
    Inbox,
    Italic,
    Mail,
    Search,
    Settings,
    Sparkles,
+   SquareTerminal,
    User,
 } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
@@ -278,14 +283,23 @@ import {
    SheetTrigger,
 } from "@/registry/brutalist/ui/sheet";
 import {
+   Sidebar,
+   SidebarContent,
+   SidebarFooter,
    SidebarGroup,
    SidebarGroupContent,
    SidebarGroupLabel,
+   SidebarHeader,
+   SidebarInset,
    SidebarMenu,
-   SidebarMenuBadge,
    SidebarMenuButton,
    SidebarMenuItem,
+   SidebarMenuSub,
+   SidebarMenuSubButton,
+   SidebarMenuSubItem,
    SidebarProvider,
+   SidebarRail,
+   SidebarTrigger,
 } from "@/registry/brutalist/ui/sidebar";
 import { Skeleton } from "@/registry/brutalist/ui/skeleton";
 import { Slider } from "@/registry/brutalist/ui/slider";
@@ -1305,30 +1319,126 @@ export function ComponentPreview({ slug }: { slug: ComponentSlug }) {
 
       case "sidebar":
          return (
-            <SidebarProvider className="min-h-0 w-full max-w-xs">
-               <div className="brut-surface w-full bg-sidebar p-3 text-sidebar-foreground">
-                  <SidebarGroup>
-                     <SidebarGroupLabel>Registry</SidebarGroupLabel>
-                     <SidebarGroupContent>
-                        <SidebarMenu>
-                           {["Overview", "Components", "Themes"].map(
-                              (item, index) => (
-                                 <SidebarMenuItem key={item}>
-                                    <SidebarMenuButton isActive={index === 1}>
-                                       <span>{item}</span>
-                                       {index === 1 && (
-                                          <SidebarMenuBadge>
-                                             61
-                                          </SidebarMenuBadge>
-                                       )}
+            <SidebarProvider
+               className="brut-panel relative h-[34rem] min-h-0 w-full max-w-4xl overflow-hidden bg-sidebar"
+               style={
+                  {
+                     "--sidebar-width": "18rem",
+                     "--sidebar-width-icon": "3.5rem",
+                  } as React.CSSProperties
+               }
+            >
+               <Sidebar
+                  variant="inset"
+                  collapsible="icon"
+                  className="absolute! h-full!"
+               >
+                  <SidebarHeader>
+                     <SidebarMenu>
+                        <SidebarMenuItem>
+                           <SidebarMenuButton size="lg" tooltip="BRUT/UI">
+                              <span className="grid size-8 shrink-0 place-items-center bg-primary text-primary-foreground">
+                                 <GalleryVerticalEnd />
+                              </span>
+                              <span className="grid min-w-0 flex-1 text-left leading-tight">
+                                 <span className="truncate font-black">BRUT/UI</span>
+                                 <span className="truncate text-xs text-muted-foreground">
+                                    Component registry
+                                 </span>
+                              </span>
+                              <ChevronsUpDown className="ml-auto" />
+                           </SidebarMenuButton>
+                        </SidebarMenuItem>
+                     </SidebarMenu>
+                  </SidebarHeader>
+
+                  <SidebarContent>
+                     <SidebarGroup>
+                        <SidebarGroupLabel>Platform</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                           <SidebarMenu>
+                              <SidebarMenuItem>
+                                 <SidebarMenuButton isActive tooltip="Playground">
+                                    <SquareTerminal />
+                                    <span>Playground</span>
+                                    <ChevronRight className="ml-auto" />
+                                 </SidebarMenuButton>
+                                 <SidebarMenuSub>
+                                    {["History", "Starred", "Settings"].map(
+                                       (item) => (
+                                          <SidebarMenuSubItem key={item}>
+                                             <SidebarMenuSubButton href="#">
+                                                <span>{item}</span>
+                                             </SidebarMenuSubButton>
+                                          </SidebarMenuSubItem>
+                                       ),
+                                    )}
+                                 </SidebarMenuSub>
+                              </SidebarMenuItem>
+
+                              {([
+                                 [Bot, "Models"],
+                                 [BookOpen, "Documentation"],
+                                 [Settings, "Settings"],
+                              ] as const).map(([Icon, label]) => (
+                                 <SidebarMenuItem key={label}>
+                                    <SidebarMenuButton tooltip={label}>
+                                       <Icon />
+                                       <span>{label}</span>
+                                       <ChevronRight className="ml-auto" />
                                     </SidebarMenuButton>
                                  </SidebarMenuItem>
-                              ),
-                           )}
-                        </SidebarMenu>
-                     </SidebarGroupContent>
-                  </SidebarGroup>
-               </div>
+                              ))}
+                           </SidebarMenu>
+                        </SidebarGroupContent>
+                     </SidebarGroup>
+                  </SidebarContent>
+
+                  <SidebarFooter>
+                     <SidebarMenu>
+                        <SidebarMenuItem>
+                           <SidebarMenuButton size="lg" tooltip="Akhil Panwar">
+                              <Avatar className="size-8">
+                                 <AvatarFallback>AP</AvatarFallback>
+                              </Avatar>
+                              <span className="grid min-w-0 flex-1 text-left leading-tight">
+                                 <span className="truncate font-black">Akhil Panwar</span>
+                                 <span className="truncate text-xs text-muted-foreground">
+                                    Creator
+                                 </span>
+                              </span>
+                              <ChevronsUpDown className="ml-auto" />
+                           </SidebarMenuButton>
+                        </SidebarMenuItem>
+                     </SidebarMenu>
+                  </SidebarFooter>
+                  <SidebarRail />
+               </Sidebar>
+
+               <SidebarInset className="min-w-0 overflow-hidden">
+                  <header className="flex h-14 shrink-0 items-center gap-3 border-b-[var(--brut-border)] border-border px-4">
+                     <SidebarTrigger />
+                     <Separator orientation="vertical" className="h-5!" />
+                     <span className="font-black uppercase">Playground</span>
+                  </header>
+                  <div className="grid flex-1 gap-4 p-4 sm:grid-cols-3">
+                     <div className="brut-item min-h-28 bg-muted p-4 sm:col-span-2">
+                        <span className="text-xs font-black tracking-widest text-muted-foreground uppercase">
+                           Activity
+                        </span>
+                     </div>
+                     <div className="brut-item min-h-28 bg-secondary p-4">
+                        <span className="text-xs font-black tracking-widest uppercase">
+                           Status
+                        </span>
+                     </div>
+                     <div className="brut-item min-h-40 bg-card p-4 sm:col-span-3">
+                        <span className="text-xs font-black tracking-widest text-muted-foreground uppercase">
+                           Workspace
+                        </span>
+                     </div>
+                  </div>
+               </SidebarInset>
             </SidebarProvider>
          );
 
