@@ -55,7 +55,9 @@ pnpm build
 
 ## Theme configuration
 
-BRUT/UI keeps shadcn's semantic color variables and adds project-wide brutalist tokens. Configure the theme on the document root:
+BRUT/UI keeps shadcn's semantic color variables and adds project-wide brutalist tokens. Installing the theme gives you **Paper + Soft + Cut by default**, so no root attributes are required for the default appearance.
+
+To select a different combination, set any of the public theme attributes on the document root:
 
 ```html
 <html
@@ -64,6 +66,14 @@ BRUT/UI keeps shadcn's semantic color variables and adds project-wide brutalist 
   data-brut-radius="cut"
 >
 ```
+
+Available values:
+
+- `data-brut-palette`: `paper`, `signal`, or `sky`
+- `data-brut-strength`: `soft`, `solid`, or `loud`
+- `data-brut-radius`: `sharp`, `cut`, or `chunky`
+
+Omit an attribute to keep its default value: Paper, Soft, or Cut respectively.
 
 See the `/themes` page for the complete installed-token reference and usage guidelines.
 

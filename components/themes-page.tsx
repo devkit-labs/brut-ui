@@ -157,9 +157,13 @@ export function ThemesPage() {
                 shadcn&apos;s semantic colour contract throughout.
               </p>
             </div>
-            <p className="border-l-[var(--brut-border)] border-border pl-4 text-sm font-semibold text-muted-foreground">
-              Light mode only. The default combination is Paper, Soft, and Cut.
-            </p>
+            <div className="border-l-[var(--brut-border)] border-border pl-4">
+              <p className="text-sm font-black uppercase">Installed default</p>
+              <p className="mt-1 text-sm font-semibold text-muted-foreground">
+                Paper + Soft + Cut. No root attributes are required unless you want
+                to change that combination.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -369,18 +373,26 @@ export function ThemesPage() {
             <section id="configuration" className="scroll-mt-24 pb-16">
               <SectionHeading
                 eyebrow="08 / Configuration"
-                title="Set the theme at the root."
-                description="The three data attributes form the public configuration API. Change them together on the document root; every registry component reads the resulting CSS variables."
+                title="The default works without configuration."
+                description="The installed stylesheet defaults to Paper, Soft, and Cut through its :root values. Add the public data attributes to the document root only when you want to override one or more parts of that combination. Every registry component reads the resulting CSS variables."
               />
+              <div className="brut-surface mt-8 bg-primary p-5 text-primary-foreground">
+                <p className="text-xs font-black tracking-widest uppercase">Zero-config default</p>
+                <p className="mt-2 text-lg font-black uppercase">Paper + Soft + Cut</p>
+                <p className="mt-2 text-sm font-semibold">
+                  Leave an attribute out to keep its default. Set only the values your
+                  application needs to change.
+                </p>
+              </div>
               <div className="mt-8 grid gap-6 xl:grid-cols-2">
                 <div>
                   <div className="mb-3 flex items-center gap-2 font-black uppercase">
-                    <Braces className="size-4" /> HTML
+                    <Braces className="size-4" /> Override at the root
                   </div>
                   <CodeBlock>{`<html
-  data-brut-palette="paper"
-  data-brut-strength="soft"
-  data-brut-radius="cut"
+  data-brut-palette="sky"
+  data-brut-strength="loud"
+  data-brut-radius="chunky"
 >`}</CodeBlock>
                 </div>
                 <div>

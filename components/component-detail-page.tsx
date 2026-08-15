@@ -106,7 +106,9 @@ export function ComponentDetailPage({
             <p className="mt-4 font-medium text-muted-foreground">
               Install BRUT/UI through the same workflow as shadcn. Once the registry is
               configured, the CLI adds this component and its required project-wide
-              theme dependency to your application.
+              theme dependency to your application. It starts in Paper, Soft, and Cut
+              with no root attributes required; use the theme attributes only to choose
+              another combination.
             </p>
             <div className="brut-surface mt-6 flex items-center gap-4 bg-foreground p-3 pl-5 text-background">
               <code className="min-w-0 flex-1 overflow-x-auto font-mono text-sm font-bold whitespace-nowrap">
