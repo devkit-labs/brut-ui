@@ -167,9 +167,12 @@ export function BrutalistLanding() {
               <Sparkles data-icon="inline-start" /> Three flavours. Built for production.
             </Badge>
             <h1 className="max-w-5xl text-[clamp(4rem,11vw,9.5rem)] leading-[0.78] font-black tracking-[-0.085em] uppercase">
-              UI that
+              Bold by
               <span className="mt-2 block w-fit border-[var(--brut-border)] border-border bg-primary px-3 pb-3 text-primary-foreground shadow-[var(--brut-shadow-x)_var(--brut-shadow-y)_0_var(--brut-shadow-color)] -rotate-1">
-                hits back.
+                design.
+              </span>
+              <span className="mt-3 block text-[0.55em] leading-[0.9] tracking-[-0.06em]">
+                Familiar by default.
               </span>
             </h1>
             <p className="mt-10 max-w-2xl text-lg leading-relaxed font-semibold sm:text-xl">
