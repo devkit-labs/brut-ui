@@ -556,7 +556,7 @@ export function BrutalistLanding() {
                 <p className="text-xs font-black tracking-widest text-muted-foreground uppercase">
                   Designer
                 </p>
-                <h3 className="mt-2 text-2xl font-black uppercase">Dulba Dorge</h3>
+                <h3 className="mt-2 text-2xl font-black uppercase">Dulba Dorje</h3>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Button
                     size="sm"
